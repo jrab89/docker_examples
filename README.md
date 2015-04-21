@@ -81,3 +81,37 @@
   ```bash
   $ docker inspect webserver
   ```
+
+## Docker Images
+
+* Show commands previously run to create an image & size of layers
+
+  ```bash
+  $ docekr history atbaker/nginx-example
+  ```
+
+* Fetch an image from Docekr Hub
+
+  ```bash
+  $ docker pull postgres:latest # image_name:tag
+  ```
+
+* Save the state of a container as an image
+
+  ```bash
+  $ docker commit -m "installed ruby, rack, and added a config.ru" a88c ruby-rack
+  ```
+
+* Run the newly created image
+
+  ```bash
+  $ docker run -d -p 9292:9292 ruby-rack rackup -o 0.0.0.0
+  ```
+
+* Push to Docker Hub
+
+  ```bash
+  $ docker tag ruby-rack jrab89/ruby-rack
+  $ docker login
+  $ docker push jrab89/ruby-rack
+  ```
