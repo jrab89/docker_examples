@@ -115,3 +115,33 @@
   $ docker login
   $ docker push jrab89/ruby-rack
   ```
+
+## Dockerfiles
+
+```Dockerfile
+# Base image
+FROM ruby:2.2
+
+# Optionally set maintainer
+MAINTAINER Jeff Rabovsky <jrab89@gmail.com>
+
+# Run shell commands in the container
+RUN gem install serve -v 1.5.2
+
+# Copy a file to a directory on the container
+ADD hello.txt /some/file/path
+
+# The default command for running a container
+CMD ["serve", "0.0.0.0:3000", "."]
+```
+
+* Build an image named "ruby-serve" from the Dockerfile in the current directory
+
+  ```bash
+  docker build -t ruby-serve .
+  ```
+* Run it
+
+  ```bash
+  docker run -p 3000:3000 ruby-serve
+  ```
