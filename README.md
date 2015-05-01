@@ -148,4 +148,4 @@ CMD ["serve", "0.0.0.0:3000", "."]
 
 ## Linking and Docker Compose
 
-[Checkout the readme](https://github.com/jrab89/sinatra_api)
+[Check out the readme](https://github.com/jrab89/sinatra_api#run-it-with-docker)
