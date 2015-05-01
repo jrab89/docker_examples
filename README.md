@@ -145,3 +145,7 @@ CMD ["serve", "0.0.0.0:3000", "."]
   ```bash
   docker run -p 3000:3000 ruby-serve
   ```
+
+## Linking and Docker Compose
+
+[Checkout the readme](https://github.com/jrab89/sinatra_api)
